@@ -15,5 +15,6 @@ No build step and no outside libraries; fonts load from Google Fonts.
 | v4.1 | Fix: photos missing in the hero ring and film strip (eager loading, WebKit-safe ring) |
 | v5  | Full-bleed editorial gallery (large + four, alternating), Ken Burns auto zoom on every photo, scroll parallax, bulb-lit headings throughout, preloaded small ring thumbnails, soft lights-off darkness, footer "g" glow fix |
 | v6  | Apple-style scroll scenes: pinned story with photos and captions changing on scroll, scroll-scrubbed 96-frame sequence with text, autoplay highlight clips, zooming "Lights on." photo lettering; 6 new Instagram photos |
+| v6.1 | HD (1440x1800) photos captured from Instagram and Justdial for the scroll scenes, sharper 1280x720 scroll sequence, shorter pinned scenes, smoother scrolling (static grain, no nav blur, no layout thrash), Show-all button fix, Instagram QR card, links and floating button |
 
 Version 1 (first draft) is kept in the claude.ai artifact history.
