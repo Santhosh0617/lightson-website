@@ -647,7 +647,7 @@ function armReveals(){$$(RVSEL).forEach(el=>{if(el.classList.contains('rvl'))ret
 /* intro */
 const intro=$('#intro');let done=false;
 function endIntro(){if(done)return;done=true;ringT0=performance.now()+250;document.documentElement.classList.remove('intro');intro.remove();document.body.classList.add('ready');setTimeout(()=>{if(sw.getAttribute('aria-pressed')==='false')lights(true)},RM?0:900)}
-if(!document.documentElement.classList.contains('intro'))endIntro();
+if(!document.documentElement.classList.contains('intro'))setTimeout(endIntro,0);
 else{
  try{sessionStorage.setItem('lo-intro','1')}catch(e){}
  const mk=$('.mark'),hex=$('#hex');
