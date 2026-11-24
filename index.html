@@ -7,14 +7,14 @@
 <meta name="description" content="LightsOn Photography, Puthur, Trichy, since 2017. Rated 4.7 by 229 customers on Justdial. Candid and traditional wedding photography, cinematic films, pre-wedding, engagement, maternity and baby shoots across Tamil Nadu.">
 <meta property="og:title" content="LightsOn Photography, Trichy">
 <meta property="og:description" content="Wedding, pre-wedding, maternity and portrait photography from our studio in Puthur, Trichy.">
-<meta property="og:image" content="img/bridal-garland-smile.webp">
+<meta property="og:image" content="img/w-blue-saree-glow.webp">
 <meta name="theme-color" content="#10251c">
 <script>(function(){var d=document.documentElement;d.classList.add('js');var s=null;try{s=sessionStorage.getItem('lo-intro')}catch(e){}if(!s&&!matchMedia('(prefers-reduced-motion:reduce)').matches)d.classList.add('intro')})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@400;500;600&family=Noto+Serif+Tamil:wght@400;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"LightsOn Photography","image":"img/bridal-garland-smile.webp","telephone":["+91 73730 12364","+91 97888 12364"],
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"LightsOn Photography","image":"img/w-blue-saree-glow.webp","telephone":["+91 73730 12364","+91 97888 12364"],
 "address":{"@type":"PostalAddress","streetAddress":"No 28, EVR Road, Near KTM Showroom, Puthur","addressLocality":"Tiruchirappalli","addressRegion":"Tamil Nadu","postalCode":"620017","addressCountry":"IN"},
 "geo":{"@type":"GeoCoordinates","latitude":10.8123809,"longitude":78.6754169},"foundingDate":"2017","paymentAccepted":"Cash, Cheque, Demand Draft",
 "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"09:00","closes":"21:00"}],
@@ -202,6 +202,36 @@ footer nav a{text-decoration:none}
 .wa svg{width:30px;height:30px;color:#fff}
 .bar{display:none}
 @media(max-width:700px){.wa{display:none}.bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--bg2);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:8px}.bar .btn{justify-content:center;padding:0 10px}}
+/* ===== v4 hero: light ring ===== */
+#bokeh{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.leak{position:absolute;inset:0;pointer-events:none;opacity:0;mix-blend-mode:screen;background:linear-gradient(100deg,transparent 30%,rgba(255,110,40,.20) 44%,rgba(255,206,130,.16) 51%,rgba(176,36,44,.12) 58%,transparent 70%);background-size:320% 100%}
+.on .leak{animation:leak 12s ease-in-out 2.5s infinite}
+@keyframes leak{0%{background-position:130% 0;opacity:0}12%{opacity:1}40%{background-position:-30% 0;opacity:.9}48%,100%{background-position:-30% 0;opacity:0}}
+.wall.stage{transform-style:flat}
+.stage{--cw:clamp(124px,14vw,206px);perspective:1500px;touch-action:pan-y;cursor:grab;outline-offset:6px}
+.stage:active{cursor:grabbing}
+.ring{position:absolute;left:50%;top:42%;width:0;height:0;transform-style:preserve-3d}
+.rc{position:absolute;left:calc(var(--cw)/-2);top:calc(var(--cw)*-.625);width:var(--cw);aspect-ratio:4/5;padding:0;border:0;background:#000;border-radius:5px;cursor:pointer;-webkit-box-reflect:below 5px linear-gradient(transparent 74%,rgba(255,255,255,.2));opacity:0;will-change:transform}
+.rc img{width:100%;height:100%;object-fit:cover;border-radius:5px;pointer-events:none}
+.rc.front{box-shadow:0 0 0 2px rgba(220,170,76,.75),0 0 50px 8px rgba(255,214,140,.28)}
+.spot{position:absolute;left:50%;top:-14%;width:min(70%,420px);height:96%;translate:-50% 0;pointer-events:none;background:linear-gradient(180deg,rgba(255,232,180,.42),rgba(255,226,160,.1) 62%,transparent);clip-path:polygon(43% 0,57% 0,100% 100%,0 100%);filter:blur(8px);opacity:0;z-index:2}
+.on .spot{animation:tube .9s linear .2s both}
+.floor{position:absolute;left:12%;right:12%;top:72%;height:16%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,214,140,.22),transparent);pointer-events:none;opacity:.35;transition:opacity .8s}
+.on .floor{opacity:1}
+.now{position:absolute;left:0;right:0;bottom:15%;text-align:center;z-index:4;pointer-events:none;transition:opacity .35s}
+.now b{display:block;font:400 22px/1.2 var(--disp)}
+html[lang=ta] .now b{font-family:var(--ta);font-size:18px}
+.now span{color:var(--mute);font-size:14px}
+.now.swap{opacity:0}
+.wall::after{z-index:3}
+.switch{z-index:6}
+.bulb{display:inline-block;opacity:.12}
+body.ready .bulb{animation:bulb 1.3s cubic-bezier(.2,.7,.2,1) var(--d,0s) both}
+@keyframes bulb{0%{opacity:.12;text-shadow:none}18%{opacity:1;color:#fff4d8;text-shadow:0 0 14px rgba(255,214,140,.95),0 0 40px rgba(220,170,76,.7)}30%{opacity:.4}42%{opacity:1;color:#fff4d8;text-shadow:0 0 14px rgba(255,214,140,.9),0 0 36px rgba(220,170,76,.6)}100%{opacity:1;color:var(--ink);text-shadow:0 0 0 transparent}}
+.wd{display:inline-block;white-space:nowrap}
+.more{display:flex;justify-content:center;margin-top:28px}
+.hero:not(.on) .now{opacity:0}
+@media(max-width:820px){.stage{--cw:clamp(96px,27vw,140px)}.ring{top:40%}.now{text-align:left;left:4%;right:auto;max-width:48%;bottom:5%}.now b{font-size:18px}}
 /* ===== motion layer ===== */
 .grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.06;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");animation:gr .7s steps(5) infinite}
 @keyframes gr{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
@@ -283,7 +313,7 @@ html[lang=ta] .st figcaption b{font-family:var(--ta);font-size:22px}
 .big span{display:block}
 .b0{color:transparent;-webkit-text-stroke:1.2px rgba(220,170,76,.32)}
 .b1{position:absolute;inset:0;color:#f6cf7a;text-shadow:0 0 24px rgba(220,170,76,.9),0 0 70px rgba(220,170,76,.45);-webkit-mask:radial-gradient(circle var(--r) at var(--x) var(--y),#000 0,rgba(0,0,0,.55) 45%,transparent 100%);mask:radial-gradient(circle var(--r) at var(--x) var(--y),#000 0,rgba(0,0,0,.55) 45%,transparent 100%)}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}html.js .rvl,html.js .hr,html.js .print{opacity:1;translate:none;filter:none}html.js .gallery .rvl img{filter:none}.grain{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}.bulb,.rc{opacity:1}.spot{opacity:1}html.js .rvl,html.js .hr,html.js .print{opacity:1;translate:none;filter:none}html.js .gallery .rvl img{filter:none}.grain{display:none}}
 </style>
 </head>
 <body>
@@ -326,9 +356,10 @@ html[lang=ta] .st figcaption b{font-family:var(--ta);font-size:22px}
 </nav>
 
 <header class="hero" id="top">
+  <canvas id="bokeh" aria-hidden="true"></canvas><i class="leak" aria-hidden="true"></i>
   <div class="wrap">
     <div>
-      <h1 class="hr" style="--d:.05s" data-ta="உங்கள் நாளின் ஒவ்வொரு ஒளியையும் நாங்கள் படமாக்குகிறோம்.">Every light of your day, kept for a lifetime.</h1>
+      <h1 id="h1" data-ta="உங்கள் நாளின் ஒவ்வொரு ஒளியையும் நாங்கள் படமாக்குகிறோம்.">Every light of your day, kept for a lifetime.</h1>
       <p class="lead hr" style="--d:.2s" data-ta="திருச்சி புத்தூரில் உள்ள எங்கள் ஸ்டுடியோவிலிருந்து திருமணம், நிச்சயதார்த்தம், வளைகாப்பு, புதிய குழந்தை புகைப்படங்கள் — கேண்டிட், பாரம்பரிய, சினிமாட்டிக் மற்றும் ட்ரோன்.">Candid, traditional, cinematic and drone coverage for weddings, engagements, valaikaappu and newborn shoots, from our studio in Puthur, Trichy.</p>
       <div class="acts hr" style="--d:.35s">
         <a class="btn mag" href="#plan" data-ta="உங்கள் ஷூட்டை திட்டமிடுங்கள்">Plan your shoot</a>
@@ -341,11 +372,11 @@ html[lang=ta] .st figcaption b{font-family:var(--ta);font-size:22px}
         <span><svg><use href="#i-cam"/></svg><span data-ta="2017 முதல்">Shooting since 2017</span></span>
       </div>
     </div>
-    <div class="wall" id="wall">
-      <i class="cone c1"></i><i class="cone c2"></i><i class="cone c3"></i>
-      <figure class="print p2"><img src="img/maternity-couple-s.webp" alt="Expecting couple in a red silk saree and white veshti" width="520" height="650"></figure>
-      <figure class="print p1"><img src="img/bridal-garland-smile.webp" alt="Bride smiling through a jasmine garland frame" width="1000" height="1249" fetchpriority="high"></figure>
-      <figure class="print p3"><img src="img/bridal-parrot-s.webp" alt="Bride in temple jewellery with a green parrot" width="520" height="650"></figure>
+    <div class="wall stage" id="wall" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Photos from the studio. Drag, or use the left and right arrow keys, to turn the ring.">
+      <i class="spot" aria-hidden="true"></i>
+      <div class="ring" id="ring"></div>
+      <i class="floor" aria-hidden="true"></i>
+      <p class="now" id="now" aria-live="polite"><b></b><span></span></p>
       <p class="hint" data-ta="விளக்கு அணைந்துள்ளது — சுட்டியை நகர்த்தி டார்ச் ஒளியில் பாருங்கள்">Lights off. Move your pointer to look around with a torch.</p>
       <button class="switch" id="switch" aria-pressed="false"><span class="plate"><span class="toggle"></span></span><span id="swl" data-ta="விளக்கை ஏற்றுங்கள்">Switch the lights on</span></button>
     </div>
@@ -362,19 +393,20 @@ html[lang=ta] .st figcaption b{font-family:var(--ta);font-size:22px}
 <section class="band" id="work" aria-labelledby="h-work">
   <div class="wrap">
     <div class="head">
-      <div><h2 id="h-work" data-ta="எங்கள் படைப்புகள்">Recent work</h2><p class="lead" data-ta="எந்தப் படத்தையும் தொட்டு முழுத்திரையில் பாருங்கள்.">Tap any photo to see it full screen.</p></div>
+      <div><h2 id="h-work" data-ta="எங்கள் படைப்புகள்">Recent work</h2><p class="lead" data-ta="Justdial-ல் உள்ள எங்கள் கேலரியிலிருந்து. எந்தப் படத்தையும் தொட்டு முழுத்திரையில் பாருங்கள்.">From our Justdial gallery. Tap any photo to see it full screen.</p></div>
       <div class="filters" role="group" aria-label="Filter photos" id="filters"></div>
     </div>
     <div class="gallery" id="gallery"></div>
+    <div class="more"><button class="btn ghost" id="more" type="button"></button></div>
   </div>
 </section>
 
 <section class="stories" id="stories" aria-labelledby="h-st">
   <div class="pin"><div class="st-track" id="st">
-    <div class="st-intro"><h2 id="h-st" data-ta="திரைப்படக் காட்சி போல ஒளியூட்டப்பட்டது.">Lit like a still from a film.</h2><p class="lead" data-ta="எங்கள் ஸ்டுடியோவின் மூன்று படங்கள். தொடர்ந்து ஸ்க்ரோல் செய்யுங்கள்.">Three portraits from our studio. Keep scrolling, or swipe on a phone.</p></div>
-    <figure class="st"><img src="img/bridal-mirror.webp" alt="Bride looking into a silver hand mirror" loading="lazy" width="1000" height="1249"><figcaption><b data-ta="கண்ணாடி">The mirror</b><span data-ta="மணமகள் போர்ட்ரெய்ட், ஸ்டுடியோ">Bridal portrait, studio light</span></figcaption></figure>
-    <figure class="st"><img src="img/maternity-couple.webp" alt="Expecting couple smiling at each other among palms" loading="lazy" width="1000" height="1250"><figcaption><b data-ta="காத்திருப்பு">Waiting together</b><span data-ta="மெட்டர்னிட்டி, வெளிப்புறம்">Maternity, outdoor daylight</span></figcaption></figure>
-    <figure class="st"><img src="img/bridal-lotus.webp" alt="Bride holding two pink lotus buds" loading="lazy" width="640" height="800"><figcaption><b data-ta="தாமரை">Lotus in hand</b><span data-ta="மணமகள் போர்ட்ரெய்ட், பொக்கே ஒளி">Bridal portrait, bokeh backdrop</span></figcaption></figure>
+    <div class="st-intro"><h2 id="h-st" data-ta="திரைப்படக் காட்சி போல ஒளியூட்டப்பட்டது.">Lit like a still from a film.</h2><p class="lead" data-ta="எங்கள் மூன்று விருப்பமான படங்கள். தொடர்ந்து ஸ்க்ரோல் செய்யுங்கள்.">Three of our favourite frames. Keep scrolling, or swipe on a phone.</p></div>
+    <figure class="st"><img src="img/w-blue-saree-glow.webp" alt="Bride in a blue and gold silk saree lit by a warm orange glow" loading="lazy" width="627" height="784"><figcaption><b data-ta="நீலமும் தங்கமும்">Blue and gold</b><span data-ta="மணமகள் போர்ட்ரெய்ட், ஸ்டுடியோ ஒளி">Bridal portrait, studio light</span></figcaption></figure>
+    <figure class="st"><img src="img/c-temple-walk.webp" alt="Couple walking hand in hand in front of an ancient temple tower" loading="lazy" width="627" height="784"><figcaption><b data-ta="கோபுரத்தின் கீழ்">Under the temple tower</b><span data-ta="ப்ரீ-வெட்டிங், கோவில் வளாகம்">Pre-wedding, temple grounds</span></figcaption></figure>
+    <figure class="st"><img src="img/w-prism.webp" alt="Bride in a mint silk saree with a rainbow prism flare" loading="lazy" width="627" height="784"><figcaption><b data-ta="ப்ரிஸம் ஒளி">Prism light</b><span data-ta="மணமகள், கேண்டிட்">Bride, candid with a prism</span></figcaption></figure>
     <div class="st-end"><h3 data-ta="அடுத்த கதை உங்களுடையதாக இருக்கலாம்.">Your story could be next.</h3><a class="btn mag" href="#plan" data-ta="உங்கள் ஷூட்டை திட்டமிடுங்கள்">Plan your shoot</a></div>
   </div></div>
 </section>
@@ -496,26 +528,29 @@ const T=(en,t)=>ta?t:en;
 
 /* Photos: [file, caption, categories] */
 const PH=[
- ['bridal-garland-smile','A smile through the malli frame','bridal'],
- ['maternity-couple','Waiting for the little one','maternity couple'],
- ['bridal-mirror','Getting ready, the mirror moment','bridal'],
- ['maternity-becoming','Becoming parents','maternity couple'],
- ['bridal-parrot','Temple jewellery and the parrot','bridal'],
- ['maternity-mom','Mom-to-be','maternity'],
- ['bridal-lotus','Lotus in hand','bridal'],
- ['maternity-couple-2','Side by side','maternity couple'],
- ['bridal-laugh','The laugh between poses','bridal'],
- ['maternity-baby-bump','Hello, baby bump','maternity'],
- ['bridal-garland','Holding the garland','bridal'],
- ['maternity-portrait','Silk and sunlight','maternity'],
- ['bridal-profile','Profile in jasmine','bridal']];
-const CATS=[['all','All','அனைத்தும்'],['bridal','Bridal portraits','மணமகள்'],['maternity','Maternity','வளைகாப்பு'],['couple','Couples','தம்பதிகள்']];
+ ['w-blue-saree-glow','Bride in blue and gold','wedding portrait'],['c-temple-laugh','Temple pre-wedding','couple'],['w-laugh-ritual','Laughter at the muhurtham','wedding'],['b-toss','Up he goes','baby'],
+ ['w-grace','Grace, the bride','wedding portrait'],['c-fairy-lights','Fairy lights','couple'],['maternity-couple','Waiting for the little one','maternity'],['p-groom-red','Groom in red light','portrait'],
+ ['w-thaali','The thaali moment','wedding'],['c-temple-walk','Under the temple tower','couple'],['w-prism','Prism light','wedding portrait'],['b-peek','Peekaboo','baby'],
+ ['w-mirror-silver','Silver saree, mirror light','wedding portrait'],['c-leaf-light','Through the leaves','couple'],['w-kiss','A kiss for the groom','wedding'],['maternity-mom','Mom-to-be','maternity'],
+ ['w-hall-light','Engagement under the chandelier','wedding couple'],['c-temple-birds','Birds over the temple','couple'],['w-joy-garland','Pure joy','wedding'],['b-cake-family','Cutting the first birthday cake','baby'],
+ ['w-rings','The rings','wedding'],['c-tea-hut','Tea at the hut','couple'],['w-bokeh-smile','Bokeh and a smile','wedding portrait'],['p-groom-bw','Groom portrait','portrait'],
+ ['w-pot-ritual','The pot ritual','wedding'],['c-temple-steps','On the temple steps','couple'],['maternity-becoming','Becoming parents','maternity'],['w-bw-promise','A promise, in black and white','wedding'],
+ ['b-bw-family','Little one in the middle','baby'],['w-palms-ivory','Ivory silk among the palms','wedding portrait'],['c-lakeside','Lakeside hug','couple'],['w-blessing','Blessings','wedding'],
+ ['w-tree-golden','Golden hour bride','wedding portrait'],['c-road-sky','Open road, big sky','couple'],['p-groom-teal','Forever mine','portrait'],['w-forehead','Kumkum blessing','wedding'],
+ ['maternity-baby-bump','Hello, baby bump','maternity'],['w-bride-pink','Getting ready','wedding portrait'],['c-walk-teal','A walk in teal','couple'],['b-cake-mom','First birthday','baby'],
+ ['w-ceremony-smile','In the mandapam','wedding'],['c-temple-wall','Along the temple walls','couple'],['w-mirror-green','Mirror, mirror','wedding portrait'],['p-tea-couple','Chai for two','couple portrait'],
+ ['w-hands-hair','Final touches','wedding'],['c-bench','Park bench pre-wedding','couple'],['w-window-bw','Window light','wedding portrait'],['maternity-couple-2','Side by side','maternity'],
+ ['bridal-garland-smile','A smile through the malli frame','portrait'],['bridal-parrot','Temple jewellery and the parrot','portrait'],['maternity-portrait','Silk and sunlight','maternity'],
+ ['bridal-mirror','The mirror moment','portrait'],['bridal-lotus','Lotus in hand','portrait']];
+const CATS=[['all','All','அனைத்தும்'],['wedding','Weddings','திருமணம்'],['couple','Pre-wedding and couples','ப்ரீ-வெட்டிங் & தம்பதிகள்'],['maternity','Maternity','வளைகாப்பு'],['baby','Baby and family','குழந்தை & குடும்பம்'],['portrait','Portraits','போர்ட்ரெய்ட்']];
 let cat='all',vis=[],cur=0;
 function renderFilters(){$('#filters').innerHTML=CATS.map(c=>`<button type="button" data-c="${c[0]}" aria-pressed="${c[0]===cat}">${T(c[1],c[2])}</button>`).join('')}
 $('#gallery').innerHTML=PH.map((p,i)=>`<button type="button" data-cur="View" data-i="${i}" data-c="${p[2]}"><img src="img/${p[0]}-s.webp" alt="${p[1]}" loading="lazy" width="520" height="650"><span>${p[1]}</span></button>`).join('');
-function applyFilter(){$$('#gallery button').forEach(b=>b.hidden=!(cat==='all'||b.dataset.c.split(' ').includes(cat)));vis=$$('#gallery button:not([hidden])').map(b=>+b.dataset.i)}
+let expanded=false;const CAP=16;
+function applyFilter(){let n=0;$$('#gallery button').forEach(b=>{const ok=cat==='all'||b.dataset.c.split(' ').includes(cat);b.hidden=!ok||(cat==='all'&&!expanded&&n>=CAP);if(ok)n++});$('#more').hidden=!(cat==='all'&&!expanded);$('#more').textContent=T(`Show all ${PH.length} photos`,`அனைத்து ${PH.length} படங்களையும் காட்டு`);vis=$$('#gallery button:not([hidden])').map(b=>+b.dataset.i)}
 $('#filters').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;cat=b.dataset.c;renderFilters();applyFilter()});
 renderFilters();applyFilter();
+$('#more').onclick=()=>{expanded=true;applyFilter();armReveals&&armReveals()};
 
 /* lightbox */
 const lb=$('#lb'),li=$('#lb img'),lp=$('#lb p');let opener;
@@ -611,7 +646,7 @@ const rvIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.ta
 function armReveals(){$$(RVSEL).forEach(el=>{if(el.classList.contains('rvl'))return;el.classList.add('rvl');const sib=[...el.parentElement.children].filter(x=>x.matches(RVSEL));el.style.setProperty('--d',(sib.indexOf(el)%4)*.09+'s');rvIO.observe(el)})}
 /* intro */
 const intro=$('#intro');let done=false;
-function endIntro(){if(done)return;done=true;document.documentElement.classList.remove('intro');intro.remove();document.body.classList.add('ready');setTimeout(()=>{if(sw.getAttribute('aria-pressed')==='false')lights(true)},RM?0:900)}
+function endIntro(){if(done)return;done=true;ringT0=performance.now()+250;document.documentElement.classList.remove('intro');intro.remove();document.body.classList.add('ready');setTimeout(()=>{if(sw.getAttribute('aria-pressed')==='false')lights(true)},RM?0:900)}
 if(!document.documentElement.classList.contains('intro'))endIntro();
 else{
  try{sessionStorage.setItem('lo-intro','1')}catch(e){}
@@ -623,15 +658,61 @@ else{
    if(k<1)requestAnimationFrame(f);else endIntro()})(t0)},1900);
  $('#skip').onclick=endIntro;addEventListener('keydown',e=>{if(e.key==='Escape')endIntro()});
 }
-/* hero: pointer light, tilt, torch */
-const wall=$('#wall');
-hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();hero.style.setProperty('--mx',e.clientX-r.left+'px');hero.style.setProperty('--my',e.clientY-r.top+'px');
- const w=wall.getBoundingClientRect();wall.style.setProperty('--tx',e.clientX-w.left+'px');wall.style.setProperty('--ty',e.clientY-w.top+'px');
- if(!RM&&FINE){const x=(e.clientX-w.left)/w.width-.5,y=(e.clientY-w.top)/w.height-.5;wall.style.transform=`perspective(1400px) rotateY(${clamp(x,-.6,.6)*7}deg) rotateX(${clamp(-y,-.6,.6)*5}deg)`}});
-hero.addEventListener('pointerleave',()=>{wall.style.transform='';wall.style.setProperty('--tx','-300px')});
+/* hero: pointer light, torch, light ring */
+const wall=$('#wall'),ringEl=$('#ring'),nowEl=$('#now');
+let px=-1,py=-1;
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5;hero.style.setProperty('--mx',e.clientX-r.left+'px');hero.style.setProperty('--my',e.clientY-r.top+'px');
+ const w=wall.getBoundingClientRect();wall.style.setProperty('--tx',e.clientX-w.left+'px');wall.style.setProperty('--ty',e.clientY-w.top+'px')});
+hero.addEventListener('pointerleave',()=>{px=py=-1;wall.style.setProperty('--tx','-300px')});
+const RING=['w-blue-saree-glow','c-temple-laugh','w-laugh-ritual','b-toss','w-grace','c-fairy-lights','w-mirror-silver','p-groom-red','c-leaf-light','w-joy-garland','b-peek','w-bokeh-smile'];
+const RN=RING.length,STEP=360/RN,phOf=f=>PH.findIndex(p=>p[0]===f);
+const CATN={wedding:['Wedding','திருமணம்'],couple:['Pre-wedding','ப்ரீ-வெட்டிங்'],baby:['Baby and family','குழந்தை & குடும்பம்'],portrait:['Portrait','போர்ட்ரெய்ட்'],maternity:['Maternity','வளைகாப்பு']};
+ringEl.innerHTML=RING.map((f,i)=>{const p=PH[phOf(f)];return `<button type="button" class="rc" data-cur="Open" data-k="${i}" aria-label="${p[1]}"><img src="img/${f}-s.webp" alt="" width="480" height="600" ${i<6?'':'loading="lazy"'}></button>`}).join('');
+const rcs=$$('.rc'),rLast=rcs.map(()=>-1);let ang=0,vel=-7,R0=400,goal=null,resumeAt=0,dragging=null,moved=0,frontK=-1,ringT0=null,ringVis=true;
+function sizeRing(){const cw=rcs[0].offsetWidth||160;R0=Math.round(cw*1.16*RN/(2*Math.PI))}
+new IntersectionObserver(e=>ringVis=e[0].isIntersecting).observe(wall);
+const norm=a=>((a%360)+540)%360-180;
+function goTo(k){const target=-k*STEP;goal=ang+norm(target-ang);resumeAt=performance.now()+3500}
+function setNow(k){if(k===frontK)return;frontK=k;rcs.forEach((c,i)=>c.classList.toggle('front',i===k));const p=PH[phOf(RING[k])],c=CATN[p[2].split(' ')[0]]||['',''];
+ nowEl.classList.add('swap');setTimeout(()=>{nowEl.firstChild.textContent=p[1];nowEl.lastChild.textContent=T(c[0],c[1]);nowEl.classList.remove('swap')},180)}
+wall.addEventListener('pointerdown',e=>{if(e.target.closest('.switch'))return;dragging={x:e.clientX,a:ang,t:performance.now()};moved=0;goal=null});
+addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-dragging.x;moved=Math.max(moved,Math.abs(dx));const na=dragging.a+dx*.32,now=performance.now();vel=(na-ang)/Math.max(8,now-dragging.t)*1000;dragging.t=now;ang=na});
+addEventListener('pointerup',()=>{if(!dragging)return;dragging=null;vel=clamp(vel,-260,260);resumeAt=performance.now()+2500});
+ringEl.addEventListener('click',e=>{const b=e.target.closest('.rc');if(!b||moved>6)return;const k=+b.dataset.k;
+ if(k===frontK){const idx=phOf(RING[k]);vis=PH.map((_,i)=>i);opener=b;show(idx,'open');lb.classList.add('open');document.body.style.overflow='hidden';$('.lbb.x').focus();if(!RM)flash(.6)}else goTo(k)});
+wall.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();goTo((frontK+1)%RN)}if(e.key==='ArrowLeft'){e.preventDefault();goTo((frontK-1+RN)%RN)}});
+wall.addEventListener('pointerenter',()=>{if(FINE)resumeAt=Infinity});wall.addEventListener('pointerleave',()=>{resumeAt=performance.now()+600});
+function tickRing(t,dt){if(!ringVis&&ringT0!==null)return;
+ if(goal!==null){ang=lerp(ang,goal,.1);vel=0;if(Math.abs(goal-ang)<.05){ang=goal;goal=null}}
+ else if(!dragging){const auto=RM?0:(t<resumeAt?0:-7);vel=lerp(vel,auto,.04);ang+=vel*dt/1000}
+ const tx=px<-.9?0:px,ty=py<-.9?0:py;
+ ringEl.style.transform=`translateZ(${-R0}px) rotateX(${-7+ty*6}deg) rotateY(${tx*10}deg)`;
+ let best=-2,bk=0;
+ rcs.forEach((c,i)=>{const a=norm(i*STEP+ang),f=Math.cos(a*Math.PI/180);if(f>best){best=f;bk=i}
+  let z=0,o=1,sp=0;if(ringT0===null){o=0}else if(!RM){const p=clamp((t-ringT0-i*80)/1100,0,1),e=p<1?1+2.2*Math.pow(p-1,3)+1.2*Math.pow(p-1,2):1;z=(1-e)*1400;o=p;sp=(1-e)*40}
+  c.style.transform=`rotateY(${i*STEP+ang}deg) translateZ(${R0+z}px) rotateZ(${sp}deg)`;c.style.opacity=o;
+  const v=Math.round(clamp(f,0,1)**2*12)/12;if(v!==rLast[i]){rLast[i]=v;c.firstChild.style.filter=`brightness(${.22+.78*v}) grayscale(${1-v}) contrast(${1.15-.15*v})`}});
+ setNow(bk)}
+/* bokeh field */
+const bk=$('#bokeh'),bkx=bk.getContext('2d');let BW=0,BH=0,DPR=1,hVis=true;
+const BOK=Array.from({length:34},()=>({x:Math.random(),y:Math.random(),r:6+Math.random()**2*46,h:[40,32,352,45][Math.floor(Math.random()*4)],a:.05+Math.random()*.16,s:.004+Math.random()*.012,ph:Math.random()*6.28}));
+function sizeBokeh(){DPR=Math.min(2,devicePixelRatio||1);BW=hero.offsetWidth;BH=hero.offsetHeight;bk.width=BW*DPR;bk.height=BH*DPR}
+new IntersectionObserver(e=>hVis=e[0].isIntersecting).observe(hero);
+function drawBokeh(t){if(!hVis||!BW)return;bkx.setTransform(DPR,0,0,DPR,0,0);bkx.clearRect(0,0,BW,BH);bkx.globalCompositeOperation='lighter';
+ const lit=hero.classList.contains('on')?1:.35,ox=px<-.9?0:px,oy=py<-.9?0:py;
+ for(const b of BOK){if(!RM){b.y-=b.s*.016;if(b.y<-.1){b.y=1.1;b.x=Math.random()}}
+  const d=b.r/52,x=b.x*BW-ox*60*d,y=b.y*BH-oy*40*d,a=b.a*lit*(.75+.25*Math.sin(t/900+b.ph));
+  const g=bkx.createRadialGradient(x,y,0,x,y,b.r);g.addColorStop(0,`hsla(${b.h},90%,72%,${a})`);g.addColorStop(.7,`hsla(${b.h},85%,60%,${a*.55})`);g.addColorStop(1,`hsla(${b.h},80%,55%,0)`);
+  bkx.fillStyle=g;bkx.beginPath();bkx.arc(x,y,b.r,0,6.283);bkx.fill()}}
+/* bulb-lit headline */
+function splitH1(){const h=$('#h1'),txt=h.textContent.trim();h.setAttribute('aria-label',txt);
+ const seg=typeof Intl!=='undefined'&&Intl.Segmenter?[...new Intl.Segmenter(ta?'ta':'en',{granularity:'grapheme'}).segment(txt)].map(x=>x.segment):[...txt];
+ let i=0,html='',word='';const flush=()=>{if(word){html+=`<span class="wd" aria-hidden="true">${word}</span>`;word=''}};
+ seg.forEach(ch=>{if(ch===' '){flush();html+=' '}else{word+=`<span class="bulb" style="--d:${(.15+i*.035).toFixed(3)}s">${ch}</span>`;i++}});flush();h.innerHTML=html}
+splitH1();
 /* film strip: negatives develop under the light */
 const trk=$('#trk'),strip=$('.strip');
-const fr=PH.map(p=>`<figure><img src="img/${p[0]}-s.webp" alt="" loading="lazy" width="520" height="650"></figure>`).join('');trk.innerHTML=fr+fr;
+const fr=PH.filter(p=>/^[wc]-/.test(p[0])).slice(0,18).map(p=>`<figure><img src="img/${p[0]}-s.webp" alt="" loading="lazy" width="520" height="650"></figure>`).join('');trk.innerHTML=fr+fr;
 const sImg=$$('#trk img'),sLast=sImg.map(()=>-1);let sOff=[],sW=0,fx=0,spd=1,tgt=1,sVis=false;
 function sizeStrip(){sOff=sImg.map(im=>im.parentElement.offsetLeft+im.parentElement.offsetWidth/2);sW=trk.scrollWidth/2}
 new IntersectionObserver(e=>sVis=e[0].isIntersecting).observe(strip);
@@ -660,7 +741,7 @@ const sc=$('.score');new IntersectionObserver((e,o)=>{if(!e[0].isIntersecting)re
  (function f(t){const k=Math.min(1,(t-t0)/1400),q=1-Math.pow(1-k,3);b.textContent=(4.7*q).toFixed(1);s.textContent=Math.round(229*q)+' ratings';if(k<1)requestAnimationFrame(f)})(t0)}).observe(sc);
 /* one loop drives everything */
 let pt=performance.now(),progQ=false;
-function loop(t){const dt=Math.min(60,t-pt);pt=t;
+function loop(t){const dt=Math.min(60,t-pt);pt=t;tickRing(t,dt);drawBokeh(t);
  if(sVis&&!RM&&sW){spd=lerp(spd,tgt,.06);fx-=spd*dt*.055;if(fx<=-sW)fx+=sW;trk.style.transform=`translate3d(${fx}px,0,0)`;
   const W=innerWidth/2,base=strip.getBoundingClientRect().left;
   sImg.forEach((im,i)=>{const c=Math.abs(base+sOff[i]+fx-W)/(innerWidth*.22),v=Math.round(clamp(1-c,0,1)*20)/20;
@@ -671,16 +752,16 @@ function loop(t){const dt=Math.min(60,t-pt);pt=t;
  requestAnimationFrame(loop)}
 function onScroll(){if(progQ)return;progQ=true;requestAnimationFrame(()=>{progQ=false;const h=document.documentElement;$('nav').style.setProperty('--p',clamp(h.scrollTop/(h.scrollHeight-innerHeight),0,1));tickStories()})}
 addEventListener('scroll',onScroll,{passive:true});
-addEventListener('resize',()=>{sizeStrip();sizeStories();onScroll()});
+addEventListener('resize',()=>{sizeStrip();sizeStories();sizeRing();sizeBokeh();onScroll()});
 addEventListener('load',()=>{sizeStrip();sizeStories();onScroll()});
-sizeStrip();sizeStories();requestAnimationFrame(loop);
+sizeStrip();sizeStories();sizeRing();sizeBokeh();requestAnimationFrame(loop);
 if(RM){sImg.forEach(i=>i.style.filter='none')}
 
 /* language */
 $$('[data-ta]').forEach(el=>el.dataset.en=el.textContent);
 $('#lang').onclick=()=>{ta=!ta;document.documentElement.lang=ta?'ta':'en';$('#lang').textContent=ta?'English':'தமிழ்';
  $$('[data-ta]').forEach(el=>el.textContent=ta?el.dataset.ta:el.dataset.en);
- renderFilters();renderAll();armReveals();status();sizeStories();lights(hero.classList.contains('on'));try{localStorage.setItem('lo-lang',ta?'ta':'en')}catch(e){}};
+ renderFilters();applyFilter();renderAll();armReveals();status();sizeStories();splitH1();const fk=frontK;frontK=-1;setNow(fk);lights(hero.classList.contains('on'));try{localStorage.setItem('lo-lang',ta?'ta':'en')}catch(e){}};
 renderAll();armReveals();
 try{if(localStorage.getItem('lo-lang')==='ta')$('#lang').click()}catch(e){}
 $('#yr').textContent=new Date().getFullYear();
