@@ -19,5 +19,6 @@ No build step and no outside libraries; fonts load from Google Fonts.
 | v6.2 | Faster images: all WebP re-encoded (method 6), 960px + 1440px responsive versions for HD photos, HD photos loaded only near their section and swapped in after decoding, tiny blurred placeholders, progressive scroll-sequence frames (first view 1.47MB -> 0.87MB) |
 | v7  | Horizontal scroll reel (HD photos slide sideways with depth and parallax) replaces the frame sequence; eased smooth scrolling (Lenis, bundled); all 11 Justdial packages with lift, tilt, glow, photo zoom, sliding description and shine on hover; responsive fixes down to 360px; 2.3 MB of frames removed |
 | v7.1 | Fix: blank hero and sections after a page refresh; bouncing light-bulb splash that writes the studio logo; floating app bar with app icon and logo, active-section highlight; mobile bottom tab bar; app icons and web manifest (add to home screen) |
+| v7.2 | Splash plays on every load and refresh; page starts at the top |
 
 Version 1 (first draft) is kept in the claude.ai artifact history.
