@@ -211,8 +211,9 @@ footer nav a{text-decoration:none}
 .stage{--cw:clamp(124px,14vw,206px);perspective:1500px;touch-action:pan-y;cursor:grab;outline-offset:6px}
 .stage:active{cursor:grabbing}
 .ring{position:absolute;left:50%;top:42%;width:0;height:0;transform-style:preserve-3d}
-.rc{position:absolute;left:calc(var(--cw)/-2);top:calc(var(--cw)*-.625);width:var(--cw);aspect-ratio:4/5;padding:0;border:0;background:#000;border-radius:5px;cursor:pointer;-webkit-box-reflect:below 5px linear-gradient(transparent 74%,rgba(255,255,255,.2));opacity:0;will-change:transform}
-.rc img{width:100%;height:100%;object-fit:cover;border-radius:5px;pointer-events:none}
+.rc{position:absolute;left:calc(var(--cw)/-2);top:calc(var(--cw)*-.625);width:var(--cw);aspect-ratio:4/5;padding:0;border:0;background:#000;border-radius:5px;cursor:pointer;opacity:0;will-change:transform;-webkit-backface-visibility:visible;backface-visibility:visible}
+.rc::after{content:"";position:absolute;inset:0;border-radius:5px;background:#050b08;opacity:var(--dim,.7);pointer-events:none;transition:opacity .15s linear}
+.rc img{display:block;width:100%;height:100%;object-fit:cover;border-radius:5px;pointer-events:none}
 .rc.front{box-shadow:0 0 0 2px rgba(220,170,76,.75),0 0 50px 8px rgba(255,214,140,.28)}
 .spot{position:absolute;left:50%;top:-14%;width:min(70%,420px);height:96%;translate:-50% 0;pointer-events:none;background:linear-gradient(180deg,rgba(255,232,180,.42),rgba(255,226,160,.1) 62%,transparent);clip-path:polygon(43% 0,57% 0,100% 100%,0 100%);filter:blur(8px);opacity:0;z-index:2}
 .on .spot{animation:tube .9s linear .2s both}
@@ -667,7 +668,7 @@ hero.addEventListener('pointerleave',()=>{px=py=-1;wall.style.setProperty('--tx'
 const RING=['w-blue-saree-glow','c-temple-laugh','w-laugh-ritual','b-toss','w-grace','c-fairy-lights','w-mirror-silver','p-groom-red','c-leaf-light','w-joy-garland','b-peek','w-bokeh-smile'];
 const RN=RING.length,STEP=360/RN,phOf=f=>PH.findIndex(p=>p[0]===f);
 const CATN={wedding:['Wedding','திருமணம்'],couple:['Pre-wedding','ப்ரீ-வெட்டிங்'],baby:['Baby and family','குழந்தை & குடும்பம்'],portrait:['Portrait','போர்ட்ரெய்ட்'],maternity:['Maternity','வளைகாப்பு']};
-ringEl.innerHTML=RING.map((f,i)=>{const p=PH[phOf(f)];return `<button type="button" class="rc" data-cur="Open" data-k="${i}" aria-label="${p[1]}"><img src="img/${f}-s.webp" alt="" width="480" height="600" ${i<6?'':'loading="lazy"'}></button>`}).join('');
+ringEl.innerHTML=RING.map((f,i)=>{const p=PH[phOf(f)];return `<button type="button" class="rc" data-cur="Open" data-k="${i}" aria-label="${p[1]}"><img src="img/${f}-s.webp" alt="" width="480" height="600" decoding="async"></button>`}).join('');
 const rcs=$$('.rc'),rLast=rcs.map(()=>-1);let ang=0,vel=-7,R0=400,goal=null,resumeAt=0,dragging=null,moved=0,frontK=-1,ringT0=null,ringVis=true;
 function sizeRing(){const cw=rcs[0].offsetWidth||160;R0=Math.round(cw*1.16*RN/(2*Math.PI))}
 new IntersectionObserver(e=>ringVis=e[0].isIntersecting).observe(wall);
@@ -691,7 +692,7 @@ function tickRing(t,dt){if(!ringVis&&ringT0!==null)return;
  rcs.forEach((c,i)=>{const a=norm(i*STEP+ang),f=Math.cos(a*Math.PI/180);if(f>best){best=f;bk=i}
   let z=0,o=1,sp=0;if(ringT0===null){o=0}else if(!RM){const p=clamp((t-ringT0-i*80)/1100,0,1),e=p<1?1+2.2*Math.pow(p-1,3)+1.2*Math.pow(p-1,2):1;z=(1-e)*1400;o=p;sp=(1-e)*40}
   c.style.transform=`rotateY(${i*STEP+ang}deg) translateZ(${R0+z}px) rotateZ(${sp}deg)`;c.style.opacity=o;
-  const v=Math.round(clamp(f,0,1)**2*12)/12;if(v!==rLast[i]){rLast[i]=v;c.firstChild.style.filter=`brightness(${.22+.78*v}) grayscale(${1-v}) contrast(${1.15-.15*v})`}});
+  const v=Math.round(clamp(f,0,1)**2*12)/12;if(v!==rLast[i]){rLast[i]=v;c.style.setProperty('--dim',(.78*(1-v)).toFixed(3))}});
  setNow(bk)}
 /* bokeh field */
 const bk=$('#bokeh'),bkx=bk.getContext('2d');let BW=0,BH=0,DPR=1,hVis=true;
@@ -712,7 +713,7 @@ function splitH1(){const h=$('#h1'),txt=h.textContent.trim();h.setAttribute('ari
 splitH1();
 /* film strip: negatives develop under the light */
 const trk=$('#trk'),strip=$('.strip');
-const fr=PH.filter(p=>/^[wc]-/.test(p[0])).slice(0,18).map(p=>`<figure><img src="img/${p[0]}-s.webp" alt="" loading="lazy" width="520" height="650"></figure>`).join('');trk.innerHTML=fr+fr;
+const fr=PH.filter(p=>/^[wc]-/.test(p[0])).slice(0,18).map(p=>`<figure><img src="img/${p[0]}-s.webp" alt="" decoding="async" width="480" height="600"></figure>`).join('');trk.innerHTML=fr+fr;
 const sImg=$$('#trk img'),sLast=sImg.map(()=>-1);let sOff=[],sW=0,fx=0,spd=1,tgt=1,sVis=false;
 function sizeStrip(){sOff=sImg.map(im=>im.parentElement.offsetLeft+im.parentElement.offsetWidth/2);sW=trk.scrollWidth/2}
 new IntersectionObserver(e=>sVis=e[0].isIntersecting).observe(strip);
