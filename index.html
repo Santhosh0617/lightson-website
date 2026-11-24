@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="apple-mobile-web-app-title" content="LightsOn">
-<script>(function(){var d=document.documentElement;d.classList.add('js');var s=null;try{s=sessionStorage.getItem('lo-intro')}catch(e){}if(!s&&!matchMedia('(prefers-reduced-motion:reduce)').matches)d.classList.add('intro')})()</script>
+<script>(function(){if('scrollRestoration' in history)history.scrollRestoration='manual';var d=document.documentElement;d.classList.add('js');if(!matchMedia('(prefers-reduced-motion:reduce)').matches)d.classList.add('intro')})()</script>
 <link rel="preload" as="image" href="img/w-blue-saree-glow-r.webp">
 <link rel="preload" as="image" href="img/c-temple-laugh-r.webp">
 <link rel="preload" as="image" href="img/w-laugh-ritual-r.webp">
@@ -869,7 +869,6 @@ const intro=$('#intro');let done=false;
 function endIntro(){if(done)return;done=true;if(typeof lenis!=='undefined'&&lenis)lenis.start();ringT0=performance.now()+250;document.documentElement.classList.remove('intro');intro.remove();document.body.classList.add('ready');setTimeout(()=>{if(sw.getAttribute('aria-pressed')==='false')lights(true)},RM?0:900)}
 if(!document.documentElement.classList.contains('intro'))setTimeout(endIntro,0);
 else{
- try{sessionStorage.setItem('lo-intro','1')}catch(e){}
  const drop=$('.sp-drop'),bulb=$('.sp-bulb'),glow=$('.sp-glow'),sh=$('.sp-shadow'),lg=$('.sp-logo');
  const ease='cubic-bezier(.33,0,.66,0)',up='cubic-bezier(.33,1,.68,1)';
  // bulb drops and bounces three times, squashing on each landing
