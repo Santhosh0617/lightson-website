@@ -17,5 +17,6 @@ No build step and no outside libraries; fonts load from Google Fonts.
 | v6  | Apple-style scroll scenes: pinned story with photos and captions changing on scroll, scroll-scrubbed 96-frame sequence with text, autoplay highlight clips, zooming "Lights on." photo lettering; 6 new Instagram photos |
 | v6.1 | HD (1440x1800) photos captured from Instagram and Justdial for the scroll scenes, sharper 1280x720 scroll sequence, shorter pinned scenes, smoother scrolling (static grain, no nav blur, no layout thrash), Show-all button fix, Instagram QR card, links and floating button |
 | v6.2 | Faster images: all WebP re-encoded (method 6), 960px + 1440px responsive versions for HD photos, HD photos loaded only near their section and swapped in after decoding, tiny blurred placeholders, progressive scroll-sequence frames (first view 1.47MB -> 0.87MB) |
+| v7  | Horizontal scroll reel (HD photos slide sideways with depth and parallax) replaces the frame sequence; eased smooth scrolling (Lenis, bundled); all 11 Justdial packages with lift, tilt, glow, photo zoom, sliding description and shine on hover; responsive fixes down to 360px; 2.3 MB of frames removed |
 
 Version 1 (first draft) is kept in the claude.ai artifact history.
