@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LightsOn website versions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a quiet contents page for the client to compare versions.
+   IDEA: a contact sheet of the website's own history.
+   PICTURE: each version as a numbered frame on a film-strip rail.
+   COLOUR and TYPE: the site's bottle green, zari gold and ivory; Marcellus + Figtree.
+   LAYOUT: single column of version rows, newest first, 760px wide. */
+:root{color-scheme:dark;--bg:#10251c;--panel:#163327;--ink:#f6eedf;--mute:#c3b9a6;--gold:#dcaa4c;--line:rgba(246,238,223,.14)}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Figtree,system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:clamp(40px,7vw,90px) 20px 80px}
+h1{font:400 clamp(36px,6vw,56px)/1.05 Marcellus,Georgia,serif;margin:0}
+.lead{color:var(--mute);margin:14px 0 36px;max-width:56ch}
+ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+li{border-bottom:1px solid var(--line)}
+li a{display:grid;grid-template-columns:84px 1fr auto;gap:18px;align-items:center;padding:20px 4px;text-decoration:none;color:inherit;transition:background .2s,padding .3s}
+li a:hover,li a:focus-visible{background:var(--panel);padding-left:14px;outline:none}
+.v{font:400 30px/1 Marcellus,Georgia,serif;color:var(--gold)}
+.t b{display:block;font-weight:600}
+.t span{color:var(--mute);font-size:15px}
+.go{color:var(--gold);font-weight:600;white-space:nowrap}
+.latest{display:inline-block;margin-left:8px;font-size:12.5px;padding:2px 10px;border-radius:999px;background:var(--gold);color:#1b1206;vertical-align:2px}
+footer{margin-top:40px;color:var(--mute);font-size:14px}
+footer a{color:var(--ink)}
+@media(max-width:520px){li a{grid-template-columns:58px 1fr}.go{display:none}.v{font-size:24px}}
+</style>
+</head>
+<body>
+<main>
+  <h1>LightsOn website, every version</h1>
+  <p class="lead">The website for LightsOn Photography, Puthur, Trichy, as it developed. Each version below is complete and works on its own, so you can open any of them and compare.</p>
+  <ol id="list"></ol>
+  <footer>Open the current site at <a href="../">the main address</a>. Studio: No 28, EVR Road, near KTM showroom, Puthur, Trichy 620017. Phone +91 73730 12364.</footer>
+</main>
+<script>
+{
+const V=[
+ ['v7','Horizontal photo reel, smooth scrolling, all 11 packages','Photos slide sideways as you scroll; every Justdial package with a lift-and-glow hover; works down to 360px phones.'],
+ ['v6.2','Faster loading, same HD','Re-encoded WebP, two sizes per HD photo, blurred placeholders; first view about 40% lighter.'],
+ ['v6.1','HD scroll scenes and Instagram','1440px photos from Instagram and Justdial, smoother scrolling, Instagram QR card and links.'],
+ ['v6','Apple-style scroll scenes','Pinned story with changing photos and captions, scroll-scrubbed sequence, highlight clips, "Lights on." lettering.'],
+ ['v5','Full-width gallery and motion everywhere','Edge-to-edge Recent work grid, slow auto zoom, scroll parallax, headings that light up letter by letter.'],
+ ['v4.1','Photo loading fix','Hero ring and film strip photos load reliably on every browser.'],
+ ['v4','Studio photos and the 3D light ring','43 photos from Justdial, a turning 3D ring of photos under a spotlight, bokeh and light leaks.'],
+ ['v3','First animation layer','Aperture intro, negatives that develop on a film strip, viewfinder cursor, lightbox shutter.'],
+ ['v2','Real business details','Justdial rating, prices, reviews, hours and services; Tamil and English; WhatsApp enquiry builder.']];
+document.getElementById('list').innerHTML=V.map((v,i)=>`<li><a href="${v[0]}/"><span class="v">${v[0]}</span><span class="t"><b>${v[1]}${i===0?'<span class="latest">Latest</span>':''}</b><span>${v[2]}</span></span><span class="go">Open</span></a></li>`).join('');
+}
+</script>
+</body>
+</html>
