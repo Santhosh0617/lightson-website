@@ -21,5 +21,6 @@ No build step and no outside libraries; fonts are self-hosted in `fonts/` (SIL O
 | v7.1 | Fix: blank hero and sections after a page refresh; bouncing light-bulb splash that writes the studio logo; floating app bar with app icon and logo, active-section highlight; mobile bottom tab bar; app icons and web manifest (add to home screen) |
 | v7.2 | Splash plays on every load and refresh; page starts at the top |
 | v8  | New first section: full-height HD photo stage that lights up after the splash, light-leak slide changes, slow zoom, captions and progress bars; new type (Bodoni Moda + Instrument Sans), self-hosted fonts, no Google Fonts request |
+| v8.1 | Film strip redesigned: real colour-negative look, frames develop with a clean wipe as they cross a lit light-table gate, glowing sprocket holes, film edge printing and frame numbers, live "Now developing" caption |
 
 Version 1 (first draft) is kept in the claude.ai artifact history.
