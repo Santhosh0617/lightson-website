@@ -21,9 +21,9 @@
 <link rel="preload" as="image" href="img/b-toss-r.webp">
 <link rel="preload" as="image" href="img/w-grace-r.webp">
 <link rel="preload" as="image" href="img/c-fairy-lights-r.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Marcellus&family=Figtree:wght@400;500;600&family=Noto+Serif+Tamil:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/ig-lamp-m.webp" as="image" imagesrcset="img/ig-lamp-m.webp 960w, img/ig-lamp.webp 1440w" imagesizes="(max-width:820px) 80svh, 50vw" fetchpriority="high">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"LightsOn Photography","image":"img/w-blue-saree-glow.webp","telephone":["+91 73730 12364","+91 97888 12364"],
 "address":{"@type":"PostalAddress","streetAddress":"No 28, EVR Road, Near KTM Showroom, Puthur","addressLocality":"Tiruchirappalli","addressRegion":"Tamil Nadu","postalCode":"620017","addressCountry":"IN"},
@@ -35,10 +35,14 @@
 /* VOICE: warm, festive, confident — a family studio that shoots the biggest days of Tamil households.
    IDEA: the studio itself. You arrive in the dark and switch the lights on; the prints on the wall glow.
    PICTURE: a studio wall of three framed prints under spotlights, lit by a real pull-switch.
-   COLOUR and TYPE: bottle-green silk field, kanjivaram red support, zari gold accent; Marcellus + Figtree, Noto Serif Tamil.
+   COLOUR and TYPE: bottle-green silk field, kanjivaram red support, zari gold accent; Bodoni Moda + Instrument Sans, Noto Serif Tamil (all self-hosted).
    LAYOUT: full-bleed green bands, content to 1240px, stacked single column below 700px, sticky call bar on phones. */
 :root{color-scheme:dark;--bg:#10251c;--bg2:#0b1b14;--panel:#163327;--ink:#f6eedf;--mute:#c3b9a6;--red:#b0242c;--gold:#dcaa4c;--line:rgba(246,238,223,.14);
---disp:"Marcellus",Georgia,serif;--body:"Figtree",system-ui,sans-serif;--ta:"Noto Serif Tamil",serif}
+--disp:"Bodoni Moda","Instrument Sans",Georgia,serif;--body:"Instrument Sans",system-ui,sans-serif;--ta:"Noto Serif Tamil",serif}
+@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni-moda.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrument-sans.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Serif Tamil";src:url(fonts/noto-serif-tamil.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0964-0965,U+0B82-0BFA,U+200C-200D,U+25CC}
+@font-face{font-family:Allura;src:url(fonts/allura.woff2) format("woff2");font-weight:400;font-display:swap}
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 var(--body);overflow-x:clip}
@@ -165,8 +169,8 @@ html[lang=ta] .svc-grid h3{font-size:19px}
 .score{display:grid;justify-items:end;gap:2px}.score b{font:400 64px/1 var(--disp);color:var(--gold)}.score span{color:var(--gold);letter-spacing:3px}.score small{color:var(--mute);font-size:14px}
 .rv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .rv figure{margin:0;padding:26px;border-radius:6px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
-.rv blockquote{margin:0;font:19px/1.45 var(--disp)}
-html[lang=ta] .rv blockquote{font-family:var(--disp)}
+.rv blockquote{margin:0;font:400 17px/1.55 var(--body);color:var(--ink)}
+html[lang=ta] .rv blockquote{font-family:var(--body)}
 .rv figcaption{margin-top:auto;color:var(--mute);font-size:14px}.rv figcaption b{color:var(--ink);font-weight:600}
 .rv .tag{display:inline-block;font-size:13px;color:var(--gold);margin-left:6px}
 @media(max-width:900px){.rv{grid-template-columns:1fr}.score{justify-items:start}}
@@ -454,6 +458,62 @@ html[lang=ta] .st figcaption b{font-family:var(--ta);font-size:22px}
 .b0{color:transparent;-webkit-text-stroke:1.2px rgba(220,170,76,.32)}
 .b1{position:absolute;inset:0;color:#f6cf7a;text-shadow:0 0 24px rgba(220,170,76,.9),0 0 70px rgba(220,170,76,.45);-webkit-mask:radial-gradient(circle var(--r) at var(--x) var(--y),#000 0,rgba(0,0,0,.55) 45%,transparent 100%);mask:radial-gradient(circle var(--r) at var(--x) var(--y),#000 0,rgba(0,0,0,.55) 45%,transparent 100%)}
 @media(prefers-reduced-motion:reduce){.pk article,.rv figure,.steps li,.svc-grid>div,.score,.visit{transform:none}*{transition:none!important;scroll-behavior:auto!important;animation:none!important}.bulb,.rc{opacity:1}.spot{opacity:1}html.js .rvl,html.js .hr,html.js .print{opacity:1;translate:none;filter:none}html.js .gallery .rvl img{filter:none}.grain{display:none}}
+
+/* ===== v8 hero: the lights come on over the work ===== */
+h1,h2,h3{font-weight:400;letter-spacing:-.012em;font-optical-sizing:auto}
+.hero{min-height:max(620px,100svh);margin-top:-78px;padding-top:78px;display:flex;align-items:center;background:radial-gradient(70% 80% at 85% 40%,#17372a,var(--bg2) 72%)}
+.hero::before{z-index:3}
+.hero .wrap{display:block;width:100%;max-width:1340px;padding:clamp(28px,5vh,64px) max(5vw,18px) clamp(64px,10vh,110px);position:relative;z-index:4}
+.htxt{max-width:min(46vw,640px)}
+.hero h1{font-size:clamp(48px,5.6vw,96px);line-height:1;letter-spacing:-.02em;max-width:9.6em;text-shadow:0 2px 30px rgba(5,14,10,.55)}
+html[lang=ta] .hero h1{font-size:clamp(28px,3vw,46px);line-height:1.35;letter-spacing:0}
+.hero .lead{font-size:clamp(16px,1.25vw,19px);max-width:44ch;margin-top:22px;color:#d9cfbd}
+.hero .acts{margin-top:32px}
+.hero .facts{margin-top:40px;padding-top:20px;gap:10px 22px;font-size:14px;max-width:600px}
+.hv{position:absolute;top:0;right:0;bottom:0;width:min(54%,calc(100svh*.84));z-index:1;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 26%);mask:linear-gradient(90deg,transparent,#000 26%)}
+.hs{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.3s cubic-bezier(.4,0,.2,1)}
+.hs.act{opacity:1;z-index:2}.hs.out{opacity:1;z-index:1;transition:none}
+.hs img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;transform:scale(1.12);transform-origin:var(--pos,50% 40%);filter:brightness(.1) saturate(0) contrast(1.1);transition:filter 2s cubic-bezier(.2,.7,.2,1)}
+.hero.on .hs img{filter:none}
+.hero.on .hs.act img,.hs.out img{animation:kb 9s cubic-bezier(.25,.1,.25,1) forwards}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1.0)}}
+.hv::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(11,27,20,.55),transparent 22%,transparent 70%,rgba(11,27,20,.7))}
+.hglow{position:absolute;z-index:4;left:50%;top:-30%;width:120%;height:90%;translate:-50% 0;pointer-events:none;background:radial-gradient(closest-side,rgba(255,226,170,.55),rgba(255,200,120,.14) 55%,transparent);mix-blend-mode:screen;opacity:0}
+.hero.on .hglow{animation:hglow 2.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes hglow{0%{opacity:0}8%{opacity:1}14%{opacity:.35}22%{opacity:1}100%{opacity:.18}}
+.hflare{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0;mix-blend-mode:screen;background:linear-gradient(100deg,transparent 30%,rgba(255,120,50,.32) 44%,rgba(255,214,150,.38) 51%,rgba(176,36,44,.2) 58%,transparent 70%);background-size:300% 100%}
+.hv.flare .hflare{animation:flare 1.5s cubic-bezier(.4,0,.2,1)}
+@keyframes flare{0%{background-position:120% 0;opacity:0}20%{opacity:1}100%{background-position:-20% 0;opacity:0}}
+.hmeta{position:absolute;z-index:5;right:calc(max(3vw,18px) + 74px);bottom:clamp(28px,6vh,56px);width:min(calc(54% - 6vw - 74px),calc(100svh*.84 - 6vw - 74px),380px);display:grid;gap:14px;text-align:right}
+.hcap{margin:0;transition:opacity .26s,translate .26s}.hcap.swap{opacity:0;translate:0 6px}
+.hcap b{display:block;font:400 clamp(20px,1.6vw,26px)/1.15 var(--disp);color:var(--ink)}
+html[lang=ta] .hcap b{font-family:var(--ta);font-size:18px}
+.hcap span{font-size:13.5px;color:#e8dcc4;letter-spacing:.02em}
+.hbars{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.hbars button{height:22px;padding:0;border:0;background:none;cursor:pointer;display:grid;align-items:center}
+.hbars i{display:block;height:2px;border-radius:2px;background:rgba(246,238,223,.28);overflow:hidden;position:relative}
+.hbars i::after{content:"";position:absolute;inset:0;background:var(--gold);transform-origin:0 50%;transform:scaleX(0)}
+.hbars button[aria-selected=true] i::after{transform:scaleX(1)}
+.hero.on .hbars button.on i::after{animation:fill 6.5s linear both}
+.hbars button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:1100px) and (min-width:821px){.htxt{max-width:56vw}.hv{width:52%}}
+@media(max-width:820px){
+ .hero{align-items:flex-end;min-height:100svh}
+ .hv{width:auto;left:0;-webkit-mask:none;mask:none}
+ .hs img{object-position:var(--pos,50% 40%)}
+ .hv::after{background:linear-gradient(180deg,rgba(11,27,20,.6),transparent 18%,transparent 30%,rgba(11,27,20,.84) 56%,var(--bg2) 94%)}
+ .htxt{max-width:none}
+ .hero .wrap{padding:0 18px 34px}
+ .hero h1{font-size:clamp(40px,11.5vw,60px)}
+ .hero .lead{font-size:15.5px;margin-top:14px}
+ .hero .acts{margin-top:22px}
+ .hero .facts{margin-top:24px;padding-top:14px;font-size:13px;gap:8px 16px}
+ .hmeta{top:calc(78px + 8px);bottom:auto;left:18px;right:18px;width:auto;text-align:left;display:flex;flex-direction:column-reverse;gap:8px}
+ .hcap b{font-size:17px}.hcap span{font-size:12.5px}
+}
+@media(max-width:700px){.hero .wrap{padding-bottom:calc(96px + env(safe-area-inset-bottom))}}
+@media(prefers-reduced-motion:reduce){.hs img{transform:none;filter:none}}
 </style>
 </head>
 <body>
@@ -508,9 +568,20 @@ html[lang=ta] .st figcaption b{font-family:var(--ta);font-size:22px}
 </nav>
 
 <header class="hero" id="top">
-  <canvas id="bokeh" aria-hidden="true"></canvas><i class="leak" aria-hidden="true"></i>
+  <div class="hv" id="hv">
+    <figure class="hs act" style="--pos:58% 30%" data-t="The lamp and the smile" data-tt="விளக்கும் புன்னகையும்" data-c="Wedding portrait" data-ct="திருமண போர்ட்ரெய்ட்"><img src="img/ig-lamp-m.webp" srcset="img/ig-lamp-m.webp 960w, img/ig-lamp.webp 1440w" sizes="(max-width:820px) 80svh, 50vw" alt="Bride holding a lit brass lamp, smiling" width="960" height="1200" fetchpriority="high" decoding="async"></figure>
+    <figure class="hs" style="--pos:58% 50%" data-t="Temple pre-wedding" data-tt="கோவில் ப்ரீ-வெட்டிங்" data-c="Pre-wedding" data-ct="ப்ரீ-வெட்டிங்"><img data-src="c-temple-laugh" sizes="(max-width:820px) 80svh, 50vw" alt="Couple laughing in front of a Chola temple" width="960" height="1200" decoding="async"></figure>
+    <figure class="hs" style="--pos:34% 40%" data-t="Tying the thaali" data-tt="தாலி கட்டும் தருணம்" data-c="Wedding" data-ct="திருமணம்"><img data-src="ig-thaali-close" sizes="(max-width:820px) 80svh, 50vw" alt="Groom tying the thaali during the wedding" width="960" height="1200" decoding="async"></figure>
+    <figure class="hs" style="--pos:44% 60%" data-t="Engagement under the chandelier" data-tt="சரவிளக்கின் கீழ் நிச்சயதார்த்தம்" data-c="Engagement" data-ct="நிச்சயதார்த்தம்"><img data-src="w-hall-light" sizes="(max-width:820px) 80svh, 50vw" alt="Engaged couple under a chandelier" width="960" height="1200" decoding="async"></figure>
+    <figure class="hs" style="--pos:50% 50%" data-t="Under the temple tower" data-tt="கோபுரத்தின் கீழ்" data-c="Pre-wedding" data-ct="ப்ரீ-வெட்டிங்"><img data-src="c-temple-walk" sizes="(max-width:820px) 80svh, 50vw" alt="Couple walking below a temple tower" width="960" height="1200" decoding="async"></figure>
+    <i class="hglow" aria-hidden="true"></i><i class="hflare" aria-hidden="true"></i>
+  </div>
+  <div class="hmeta">
+    <p class="hcap" aria-live="polite"><b>The lamp and the smile</b><span>Wedding portrait</span></p>
+    <div class="hbars" role="tablist" aria-label="Featured photos"><button type="button" role="tab" aria-selected="true" aria-label="Photo 1 of 5" class=on><i></i></button><button type="button" role="tab" aria-selected="false" aria-label="Photo 2 of 5"><i></i></button><button type="button" role="tab" aria-selected="false" aria-label="Photo 3 of 5"><i></i></button><button type="button" role="tab" aria-selected="false" aria-label="Photo 4 of 5"><i></i></button><button type="button" role="tab" aria-selected="false" aria-label="Photo 5 of 5"><i></i></button></div>
+  </div>
   <div class="wrap">
-    <div>
+    <div class="htxt">
       <h1 id="h1" data-ta="உங்கள் நாளின் ஒவ்வொரு ஒளியையும் நாங்கள் படமாக்குகிறோம்.">Every light of your day, kept for a lifetime.</h1>
       <p class="lead hr" style="--d:.2s" data-ta="திருச்சி புத்தூரில் உள்ள எங்கள் ஸ்டுடியோவிலிருந்து திருமணம், நிச்சயதார்த்தம், வளைகாப்பு, புதிய குழந்தை புகைப்படங்கள் — கேண்டிட், பாரம்பரிய, சினிமாட்டிக் மற்றும் ட்ரோன்.">Candid, traditional, cinematic and drone coverage for weddings, engagements, valaikaappu and newborn shoots, from our studio in Puthur, Trichy.</p>
       <div class="acts hr" style="--d:.35s">
@@ -523,14 +594,6 @@ html[lang=ta] .st figcaption b{font-family:var(--ta);font-size:22px}
         <span><svg><use href="#i-star"/></svg><span data-ta="Justdial-ல் 229 பேர் 4.7 மதிப்பீடு">Rated 4.7 by 229 customers on Justdial</span></span>
         <span><svg><use href="#i-cam"/></svg><span data-ta="2017 முதல்">Shooting since 2017</span></span>
       </div>
-    </div>
-    <div class="wall stage" id="wall" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Photos from the studio. Drag, or use the left and right arrow keys, to turn the ring.">
-      <i class="spot" aria-hidden="true"></i>
-      <div class="ring" id="ring"></div>
-      <i class="floor" aria-hidden="true"></i>
-      <p class="now" id="now" aria-live="polite"><b></b><span></span></p>
-      <p class="hint" data-ta="விளக்கு அணைந்துள்ளது — சுட்டியை நகர்த்தி டார்ச் ஒளியில் பாருங்கள்">Lights off. Move your pointer to look around with a torch.</p>
-      <button class="switch" id="switch" aria-pressed="false"><span class="plate"><span class="toggle"></span></span><span id="swl" data-ta="விளக்கை ஏற்றுங்கள்">Switch the lights on</span></button>
     </div>
   </div>
 </header>
@@ -851,9 +914,8 @@ function status(){
 status();setInterval(status,60000);
 
 /* lights */
-const hero=$('.hero'),sw=$('#switch');
-function lights(on){hero.classList.toggle('on',on);sw.setAttribute('aria-pressed',on);$('#swl').textContent=on?T('Lights are on','விளக்கு எரிகிறது'):T('Switch the lights on','விளக்கை ஏற்றுங்கள்')}
-sw.onclick=()=>{const on=!hero.classList.contains('on');if(on)flash(.35);lights(on)};
+const hero=$('.hero');
+function lights(on){hero.classList.toggle('on',on);if(on){hBars(hk);hSched()}}
 
 
 
@@ -866,7 +928,7 @@ const rvIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.ta
 function armReveals(){$$(RVSEL).forEach(el=>{if(el.classList.contains('rvl'))return;el.classList.add('rvl');const sib=[...el.parentElement.children].filter(x=>x.matches(RVSEL));el.style.setProperty('--d',(sib.indexOf(el)%4)*.09+'s');rvIO.observe(el)})}
 /* intro */
 const intro=$('#intro');let done=false;
-function endIntro(){if(done)return;done=true;if(typeof lenis!=='undefined'&&lenis)lenis.start();ringT0=performance.now()+250;document.documentElement.classList.remove('intro');intro.remove();document.body.classList.add('ready');setTimeout(()=>{if(sw.getAttribute('aria-pressed')==='false')lights(true)},RM?0:900)}
+function endIntro(){if(done)return;done=true;if(typeof lenis!=='undefined'&&lenis)lenis.start();document.documentElement.classList.remove('intro');intro.remove();document.body.classList.add('ready');setTimeout(()=>{if(!hero.classList.contains('on')){lights(true);if(!RM)flash(.18)}},RM?0:250)}
 if(!document.documentElement.classList.contains('intro'))setTimeout(endIntro,0);
 else{
  const drop=$('.sp-drop'),bulb=$('.sp-bulb'),glow=$('.sp-glow'),sh=$('.sp-shadow'),lg=$('.sp-logo');
@@ -890,53 +952,22 @@ else{
  setTimeout(()=>{if(done)return;intro.classList.add('out');setTimeout(endIntro,700)},3700);
  $('#skip').onclick=endIntro;addEventListener('keydown',e=>{if(e.key==='Escape')endIntro()});
 }
-/* hero: pointer light, torch, light ring */
-const wall=$('#wall'),ringEl=$('#ring'),nowEl=$('#now');
-let px=-1,py=-1;
-hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5;hero.style.setProperty('--mx',e.clientX-r.left+'px');hero.style.setProperty('--my',e.clientY-r.top+'px');
- const w=wall.getBoundingClientRect();wall.style.setProperty('--tx',e.clientX-w.left+w.width*.16+'px');wall.style.setProperty('--ty',e.clientY-w.top+w.height*.22+'px')});
-hero.addEventListener('pointerleave',()=>{px=py=-1;wall.style.setProperty('--tx','-300px')});
-const RING=['w-blue-saree-glow','c-temple-laugh','w-laugh-ritual','b-toss','w-grace','c-fairy-lights','w-mirror-silver','p-groom-red','ig-lamp','w-joy-garland','b-peek','ig-aandal'];
-const RN=RING.length,STEP=360/RN,phOf=f=>PH.findIndex(p=>p[0]===f);
-const CATN={wedding:['Wedding','திருமணம்'],couple:['Pre-wedding','ப்ரீ-வெட்டிங்'],baby:['Baby and family','குழந்தை & குடும்பம்'],portrait:['Portrait','போர்ட்ரெய்ட்'],maternity:['Maternity','வளைகாப்பு']};
-ringEl.innerHTML=RING.map((f,i)=>{const p=PH[phOf(f)];return `<button type="button" class="rc" data-cur="Open" data-k="${i}" aria-label="${p[1]}"><img src="img/${f}-r.webp" alt="" width="300" height="375" decoding="async" fetchpriority="${i<6?'high':'auto'}"></button>`}).join('');
-const rcs=$$('.rc'),rLast=rcs.map(()=>-1),rReady=rcs.map(()=>0);
-rcs.forEach((c,i)=>{const im=c.firstChild,ok=()=>{if(!rReady[i])rReady[i]=performance.now()};if(im.complete&&im.naturalWidth)ok();else{(im.decode?im.decode():Promise.reject()).then(ok,()=>im.addEventListener('load',ok,{once:true}));setTimeout(ok,4000)}});let ang=0,vel=-7,R0=400,goal=null,resumeAt=0,dragging=null,moved=0,frontK=-1,ringT0=null,ringVis=true;
-function sizeRing(){const cw=rcs[0].offsetWidth||160;R0=Math.round(cw*1.16*RN/(2*Math.PI))}
-new IntersectionObserver(e=>ringVis=e[0].isIntersecting).observe(wall);
-const norm=a=>((a%360)+540)%360-180;
-function goTo(k){const target=-k*STEP;goal=ang+norm(target-ang);resumeAt=performance.now()+3500}
-function setNow(k){if(k===frontK)return;frontK=k;rcs.forEach((c,i)=>c.classList.toggle('front',i===k));const p=PH[phOf(RING[k])],c=CATN[p[2].split(' ')[0]]||['',''];
- nowEl.classList.add('swap');setTimeout(()=>{nowEl.firstChild.textContent=p[1];nowEl.lastChild.textContent=T(c[0],c[1]);nowEl.classList.remove('swap')},180)}
-wall.addEventListener('pointerdown',e=>{if(e.target.closest('.switch'))return;dragging={x:e.clientX,a:ang,t:performance.now()};moved=0;goal=null});
-addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-dragging.x;moved=Math.max(moved,Math.abs(dx));const na=dragging.a+dx*.32,now=performance.now();vel=(na-ang)/Math.max(8,now-dragging.t)*1000;dragging.t=now;ang=na});
-addEventListener('pointerup',()=>{if(!dragging)return;dragging=null;vel=clamp(vel,-260,260);resumeAt=performance.now()+2500});
-ringEl.addEventListener('click',e=>{const b=e.target.closest('.rc');if(!b||moved>6)return;const k=+b.dataset.k;
- if(k===frontK){const idx=phOf(RING[k]);vis=PH.map((_,i)=>i);opener=b;show(idx,'open');lb.classList.add('open');lenis&&lenis.stop();document.body.style.overflow='hidden';$('.lbb.x').focus();if(!RM)flash(.6)}else goTo(k)});
-wall.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();goTo((frontK+1)%RN)}if(e.key==='ArrowLeft'){e.preventDefault();goTo((frontK-1+RN)%RN)}});
-wall.addEventListener('pointerenter',()=>{if(FINE)resumeAt=Infinity});wall.addEventListener('pointerleave',()=>{resumeAt=performance.now()+600});
-function tickRing(t,dt){if(!ringVis&&ringT0!==null)return;
- if(goal!==null){ang=lerp(ang,goal,.1);vel=0;if(Math.abs(goal-ang)<.05){ang=goal;goal=null}}
- else if(!dragging){const auto=RM?0:(t<resumeAt?0:-7);vel=lerp(vel,auto,.04);ang+=vel*dt/1000}
- const tx=px<-.9?0:px,ty=py<-.9?0:py;
- ringEl.style.transform=`translateZ(${-R0}px) rotateX(${-7+ty*6}deg) rotateY(${tx*10}deg)`;
- let best=-2,bk=0;
- rcs.forEach((c,i)=>{const a=norm(i*STEP+ang),f=Math.cos(a*Math.PI/180);if(f>best){best=f;bk=i}
-  let z=0,o=1,sp=0;if(ringT0===null||!rReady[i]){o=0;z=1400}else if(!RM){const p=clamp((t-Math.max(ringT0+i*80,rReady[i]))/1100,0,1),e=p<1?1+2.2*Math.pow(p-1,3)+1.2*Math.pow(p-1,2):1;z=(1-e)*1400;o=p;sp=(1-e)*40}
-  c.style.transform=`rotateY(${i*STEP+ang}deg) translateZ(${R0+z}px) rotateZ(${sp}deg)`;c.style.opacity=o;
-  const v=Math.round(clamp(f,0,1)**2*12)/12;if(v!==rLast[i]){rLast[i]=v;c.style.setProperty('--dim',(.78*(1-v)).toFixed(3))}});
- setNow(bk)}
-/* bokeh field */
-const bk=$('#bokeh'),bkx=bk.getContext('2d');let BW=0,BH=0,DPR=1,hVis=true;
-const BOK=Array.from({length:34},()=>({x:Math.random(),y:Math.random(),r:6+Math.random()**2*46,h:[40,32,352,45][Math.floor(Math.random()*4)],a:.05+Math.random()*.16,s:.004+Math.random()*.012,ph:Math.random()*6.28}));
-function sizeBokeh(){DPR=Math.min(2,devicePixelRatio||1);BW=hero.offsetWidth;BH=hero.offsetHeight;bk.width=BW*DPR;bk.height=BH*DPR}
+/* hero: lights-on photo stage */
+const hvw=$('#hv'),hs=$$('.hs'),hb=$$('.hbars button'),hcap=$('.hcap'),HSN=hs.length,HDUR=6500;
+let hk=0,hT=null,hVis=true,frontK=0;
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();hero.style.setProperty('--mx',e.clientX-r.left+'px');hero.style.setProperty('--my',e.clientY-r.top+'px')});
+function hLoad(f){const im=f.querySelector('img');if(im.dataset.src&&!im.getAttribute('src')){const n=im.dataset.src;im.srcset=`img/${n}-m.webp 960w, img/${n}.webp 1440w`;im.src=`img/${n}-m.webp`}}
+function setNow(k){frontK=k;const f=hs[k],put=()=>{hcap.firstChild.textContent=T(f.dataset.t,f.dataset.tt);hcap.lastChild.textContent=T(f.dataset.c,f.dataset.ct);hcap.classList.remove('swap')};if(RM)return put();hcap.classList.add('swap');setTimeout(put,260)}
+function hBars(k){hb.forEach((b,i)=>{b.classList.remove('on');b.setAttribute('aria-selected',i===k)});void hvw.offsetWidth;hb[k].classList.add('on')}
+function hGo(k){k=(k+HSN)%HSN;if(k===hk)return hSched();const nx=hs[k],im=nx.querySelector('img');hLoad(nx);
+ const show=()=>{const prev=hs[hk];prev.classList.remove('act');prev.classList.add('out');setTimeout(()=>prev.classList.remove('out'),1500);
+  nx.classList.add('act');hk=k;hBars(k);setNow(k);if(!RM){hvw.classList.remove('flare');void hvw.offsetWidth;hvw.classList.add('flare')}hLoad(hs[(k+1)%HSN]);hSched()};
+ if(im.complete&&im.naturalWidth)show();else{(im.decode?im.decode():Promise.reject()).then(show,()=>im.addEventListener('load',show,{once:true}))}}
+function hSched(){clearTimeout(hT);if(RM)return;hT=setTimeout(()=>{if(hVis&&!document.hidden&&done)hGo(hk+1);else hSched()},HDUR)}
+hb.forEach((b,i)=>b.addEventListener('click',()=>{clearTimeout(hT);hGo(i)}));
 new IntersectionObserver(e=>hVis=e[0].isIntersecting).observe(hero);
-function drawBokeh(t){if(!hVis||!BW)return;bkx.setTransform(DPR,0,0,DPR,0,0);bkx.clearRect(0,0,BW,BH);bkx.globalCompositeOperation='lighter';
- const lit=hero.classList.contains('on')?1:.35,ox=px<-.9?0:px,oy=py<-.9?0:py;
- for(const b of BOK){if(!RM){b.y-=b.s*.016;if(b.y<-.1){b.y=1.1;b.x=Math.random()}}
-  const d=b.r/52,x=b.x*BW-ox*60*d,y=b.y*BH-oy*40*d,a=b.a*lit*(.75+.25*Math.sin(t/900+b.ph));
-  const g=bkx.createRadialGradient(x,y,0,x,y,b.r);g.addColorStop(0,`hsla(${b.h},90%,72%,${a})`);g.addColorStop(.7,`hsla(${b.h},85%,60%,${a*.55})`);g.addColorStop(1,`hsla(${b.h},80%,55%,0)`);
-  bkx.fillStyle=g;bkx.beginPath();bkx.arc(x,y,b.r,0,6.283);bkx.fill()}}
+addEventListener('load',()=>hLoad(hs[1]));
+function tickRing(){}function drawBokeh(){}function sizeRing(){}function sizeBokeh(){}
 /* bulb-lit headline */
 function bulbify(h,base,step){const txt=h.textContent.trim();if(!txt)return;h.setAttribute('aria-label',txt);
  const seg=typeof Intl!=='undefined'&&Intl.Segmenter?[...new Intl.Segmenter(ta?'ta':'en',{granularity:'grapheme'}).segment(txt)].map(x=>x.segment):[...txt];
