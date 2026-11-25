@@ -23,5 +23,6 @@ No build step and no outside libraries; fonts are self-hosted in `fonts/` (SIL O
 | v8  | New first section: full-height HD photo stage that lights up after the splash, light-leak slide changes, slow zoom, captions and progress bars; new type (Bodoni Moda + Instrument Sans), self-hosted fonts, no Google Fonts request |
 | v8.1 | Film strip redesigned: real colour-negative look, frames develop with a clean wipe as they cross a lit light-table gate, glowing sprocket holes, film edge printing and frame numbers, live "Now developing" caption |
 | v8.2 | Fix: the glowing footer "LightsOn" sat slightly higher and left of its outline; now lines up exactly |
+| v8.3 | Camera viewfinder is the only cursor on computers (system arrow hidden) and follows the mouse more tightly |
 
 Version 1 (first draft) is kept in the claude.ai artifact history.

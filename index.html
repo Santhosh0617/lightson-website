@@ -543,6 +543,7 @@ html[lang=ta] .devnow b{font-family:var(--ta);font-size:16px}
 @media(max-width:700px){.strip{padding:40px 0 28px}.trk figure{width:clamp(130px,38vw,170px)}.gate{width:calc(clamp(130px,38vw,170px) + 34px);height:calc(clamp(130px,38vw,170px)*1.25 + 92px);top:28px}.strip{padding-top:40px}.devnow{flex-direction:column;align-items:center;gap:2px}}
 .gate::before{content:"";position:absolute;inset:12px 0;background:radial-gradient(70% 60% at 50% 50%,rgba(255,226,170,.10),rgba(255,214,150,.03) 70%,transparent);mix-blend-mode:screen;box-shadow:0 0 70px 14px rgba(255,206,130,.14)}
 .gate{z-index:2}
+html.vfon,html.vfon *{cursor:none!important}
 </style>
 </head>
 <body>
@@ -1025,7 +1026,7 @@ function tickStories(){if(!stS)return;if(!pinned)return;const r=stS.getBoundingC
  stI.forEach(im=>{const b=im.getBoundingClientRect(),c=Math.abs(b.left+b.width/2-innerWidth/2)/(innerWidth/2),k=clamp(1-c,0,1);im.style.filter=`brightness(${.35+.65*k}) saturate(${.4+.6*k})`})}
 /* viewfinder cursor + magnetic buttons */
 const vf=$('#vf'),FINE=matchMedia('(pointer:fine)').matches;let cx=-100,cy=-100,tx=-100,ty=-100;
-if(FINE&&!RM){addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;vf.style.opacity=1});
+if(FINE&&!RM){document.documentElement.classList.add('vfon');addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;vf.style.opacity=1});
  document.addEventListener('pointerover',e=>{const el=e.target.closest('[data-cur],a,button,input,textarea,label');vf.classList.toggle('big',!!el);vf.firstChild.textContent=el&&el.dataset.cur||''});
  document.addEventListener('pointerleave',()=>vf.style.opacity=0);
  document.addEventListener('pointermove',e=>{const m=e.target.closest('.mag');$$('.mag').forEach(x=>{if(x!==m)x.style.transform=''});if(!m)return;const r=m.getBoundingClientRect();m.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.28}px,${(e.clientY-r.top-r.height/2)*.38}px)`})}
@@ -1088,7 +1089,7 @@ function loop(t){const dt=Math.min(60,t-pt);pt=t;if(lenis)lenis.raf(t);tickRing(
    if(f1<=g0||f0>=g1)cp='inset(0)';else if(f0<g0)cp=`inset(0 ${((f1-g0)/sFW*100).toFixed(1)}% 0 0)`;else if(f1>g1)cp=`inset(0 0 0 ${((g1-f0)/sFW*100).toFixed(1)}%)`;else cp='inset(0 0 0 100%)';
    if(cp!==sLast[i]){sLast[i]=cp;im.style.clipPath=cp}const d=Math.abs(c-W);if(d<best){best=d;bk=i}});
   const k=bk%FRP.length;if(k!==devK&&best<sFW*.5){devK=k;devt.textContent=FRP[k][1]}}
- if(FINE&&!RM){cx=lerp(cx,tx,.22);cy=lerp(cy,ty,.22);vf.style.transform=`translate3d(${cx}px,${cy}px,0)`}
+ if(FINE&&!RM){cx=lerp(cx,tx,.5);cy=lerp(cy,ty,.5);vf.style.transform=`translate3d(${cx}px,${cy}px,0)`}
  if(bVis&&!RM){if(!bHot){bx2=50+38*Math.sin(t/2300);by2=55+12*Math.sin(t/1300)}const R0=big.offsetWidth*(bHot?.2:.13)*(1+.08*Math.sin(t/180)*(Math.random()<.04?3:0));
   bx=lerp(bx,bx2,.08);by=lerp(by,by2,.08);br=lerp(br,R0,.08);big.style.setProperty('--x',bx+'%');big.style.setProperty('--y',by+'%');big.style.setProperty('--r',br+'px')}
  requestAnimationFrame(loop)}
