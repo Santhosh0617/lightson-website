@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#10251c"/><circle cx="50" cy="50" r="33" fill="none" stroke="#dcaa4c" stroke-width="7"/><circle cx="50" cy="50" r="20" fill="none" stroke="#dcaa4c" stroke-width="4"/><circle cx="50" cy="50" r="9" fill="#dcaa4c"/><circle cx="43" cy="43" r="3.5" fill="#f6eedf"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#10251c"/><g transform="translate(8 8) scale(0.84)">
+<circle cx="50" cy="56" r="29" fill="none" stroke="#e9c983" stroke-width="8"/>
+<circle cx="50" cy="56" r="18.5" fill="#e9c983"/><circle cx="50" cy="56" r="13" fill="none" stroke="#9a7a3e" stroke-width="2.2"/>
+<circle cx="50" cy="56" r="6.5" fill="#9a7a3e"/><circle cx="44.5" cy="50" r="3.6" fill="#fff6dc"/><circle cx="49" cy="54.5" r="1.4" fill="#fff6dc"/>
+<g transform="rotate(-32 34 24)"><path d="M27 21h14l4 5-11 11-11-11z" fill="#e9c983"/><path d="M27 21h14l4 5H23z" fill="#fff6dc" opacity=".55"/></g>
+</g></svg>
